@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="pt-br"> 
+{% load static %}
+<head >
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	<title>Sunnergy - Soluçoes em Energias Renovaváveis</title>
+	<link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+	<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:600italic,400,800,700,300' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=BenchNine:300,400,700' rel='stylesheet' type='text/css'>
+	<script src="{% static 'js/modernizr.js' %}"></script>
+
+</head>
+<body >
+	
+	<!-- ====================================================
+	SESSÃO DE CABEÇALHO -->
+	<header class="top-header">
+		<div class="container" >
+			<div class="row">
+				<div class="col-md-4 col-sm-6">
+					<div class="single-about-detail">
+						<div class="about-img">
+							<img class="img-responsive" src="{% static 'img/13567030_266896573668401_5269669689601277501_n.jpg' %}" alt="">
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-12">
+					<nav class="navbar navbar-default">
+					  <div class="container-fluid nav-bar">
+					    <!-- Marque e alterne para agrupar para melhor exibição em dispositivos móveis -->
+					    <div class="navbar-header">
+					      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					        <span class="sr-only">Toggle navigation</span>
+					        <span class="icon-bar"></span>
+					        <span class="icon-bar"></span>
+					        <span class="icon-bar"></span>
+					      </button>
+					    </div>
+
+					    <!-- Colete os links de navegação, formulários e outros conteúdos para alternar -->
+					    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					      
+					      <ul class="nav navbar-nav navbar-right">
+					        <li><a class="menu active" href="#home" >Início</a></li>
+					        <li><a class="menu" href="#about">Como Funciona</a></li>
+					        <li><a class="menu" href="#service">Serviços </a></li>
+					        <li><a class="menu" href="#team">Quem Somos</a></li>
+					        <li><a class="menu" href="#contact"> Solicite Orçamentos</a></li>
+					        <li><a class="menu" > Blog</a></li>
+					      </ul>
+					    </div><!-- /colapso de navbar -->
+					  </div><!-- / .recipiente-fluido-->
+					</nav>
+				</div>
+			</div>
+		</div>
+	</header> <!-- fim da área de cabeçalho -->
+
+	<section class="slider" id="home">
+		<div class="container-fluid">
+			<div class="row">
+			    <div id="carouselHacked" class="carousel slide carousel-fade" data-ride="carousel">
+					<div class="header-backup"></div>
+			        <!-- PACOTE para slides -->
+			        <div class="carousel-inner" role="listbox">
+						{% for s in slideshow %}
+						{% if forloop.first %}
+		        
+			            <div class="item active">
+			            	<img src="{% static 'img/minigeracao.jpg' %}" alt="">
+			                <div class="carousel-caption">
+		               			<h1>Sunnergy</h1>
+		               			<p>Sua empresa produz energia?</p>
+		               			<button>Saiba mais</button>
+			                </div>
+			            </div>
+
+			            {% else %}
+
+			            <div class="item">
+			            	<img src="{% static 'img/img09.jpg' %}" alt="">
+			                <div class="carousel-caption">
+		               			<h1>Sunnergy</h1>
+		               			<p>Projetamos voçê para o futuro</p>
+		               			<button>Saiba mais</button>
+			                </div>
+			            </div>
+			            <div class="item">
+			            	<img src="{% static 'img/img08.jpg' %}" alt="">
+			                <div class="carousel-caption">
+		               			<h1>Sunnergy</h1>
+		               			<p>Projetamos e instalamos seu sistema</p>
+		               			<button>Saiba mais</button>
+			                </div>
+			            </div>
+			            <div class="item">
+			            	<img src="{% static 'img/img04.jpg' %}" alt="">
+			                <div class="carousel-caption">
+		               			<h1>Sunnergy</h1>
+		               			<p>Paineis solares para autoconsumo</p>
+		               			<button>Saiba mais</button>
+			                </div>
+			            </div>
+
+						{% endif %}
+						{% endfor %}
+
+			        </div>
+			        <!-- INICIO DOS CONTROLES DESLIZANTE -->
+			        <a class="left carousel-control" href="#carouselHacked" role="button" data-slide="prev">
+			            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+			            <span class="sr-only">Previous</span>
+			        </a>
+			        <a class="right carousel-control" href="#carouselHacked" role="button" data-slide="next">
+			            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+			            <span class="sr-only">Next</span>
+			        </a>
+			    </div>
+			</div>
+		</div>
+	</section><!-- fim da seção do controle deslizante -->
+
+	<!-- sobre a seção -->
+	<section class="about text-center" id="about">
+		<div class="container">
+			<div class="row">
+				<h2>Como Funciona</h2>
+				<h4>É a conversão direta da luz do sol em energia elétrica, através de dispositivos chamados
+					de células fotovoltaicas. Tais células são agrupadas em módulos fotovoltaicos, que por sua vez são instalados em coberturas e fachadas de edificações, ou no chão, em áreas que não sofram sombreamento considerável. Como a geração fotovoltaica é diretamente dependente do nível e irradiação solar, ela só ocorre no período diurno, e há maior geração nos locais e períodos com maior incidência solar e menor nebulosidade. É uma forma de conversão de energia de baixo impacto ambiental e que utiliza uma fonte renovável e abundante: a luz solar. O grande aumento no número de empresas no ramo de energia fotovoltaica trouxe um número considerável de empresas despreparadas. A realização do projeto de um sistema fotovoltaico requer o estudo do local de instalação, de sombreamento, incidência de radiação, entre outros fatores. E isso não vale só para grandes projetos, vale também para pequenos projetos em residências.
+
+Dessa forma o projeto é feito de acordo com as reais necessidades do cliente. Um projeto bem feito pode significar uma diminuição no investimento e uma expectativa correta de funcionamento do sistema e geração de energia. Sistemas com a instalação correta e equipamentos de qualidade têm uma vida útil muito maior, durando no mínimo 25 anos!</h4>
+				<div class="col-md-3 col-sm-4">
+					<div class="single-about-detail clearfix">
+						<div class="about-img">
+							<img class="img-responsive" src="{% static 'img/images (20).jpg' %}" alt="">
+						</div>
+						<div class="about-details">
+							<div class="pentagon-text">
+								<h1>1º</h1>
+							</div>
+							<h3>CAPTAÇÃO</h3>
+							<p>Os painéis fotovoltaicos captam a energia solar e a convertem em corrente elétrica. A quantidade e o tipo dos painéis depende do volume de energia a ser gerado e também do tipo de aplicação.<br/><br/><br/><br/><br/><br/><br/>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-4">
+					<div class="single-about-detail">
+						<div class="about-img">
+							<img class="img-responsive" src="{% static 'img/images (8).jpg' %}" alt="">
+						</div>
+						<div class="about-details">
+							<div class="pentagon-text">
+								<h1>2º</h1>
+							</div>
+
+							<h3>CONVERSÃO</h3>
+							<p>O inversor recebe a energia gerada pelos painéis solares, em corrente contínua, e a converte para corrente alternada, com os mesmos parâmetros de tensão e frequência da energia fornecida pela rede elétrica. Assim, todos os equipamentos elétricos funcionam normalmente.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-4">
+					<div class="single-about-detail">
+						<div class="about-img">
+							<img class="img-responsive" src="{% static 'img/download01.jpg' %}" alt="">
+						</div>
+						<div class="about-details">
+							<div class="pentagon-text">
+								<h1>3º</h1>
+							</div>
+							<h3>CONSUMO</h3>
+							<p>Você consome a energia que foi produzida pelo seu sistema ao longo do dia. Nos momentos onde não há geração, ou esta é insuficiente para suprir todo o seu consumo, a energia elétrica é fornecida normalmente pela concessionária.<br/><br/></p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-4">
+					<div class="single-about-detail">
+						<div class="about-img">
+							<img class="img-responsive" src="{% static 'img/consumo.jpg' %}" alt="">
+						</div>
+						<div class="about-details">
+							<div class="pentagon-text">
+								<h1>4º</h1>
+							</div>
+							<h3>COMPENSAÇÃO</h3>
+							<p>Caso você não consuma toda a energia solar produzida, o excedente vai para a rede da concessionária de energia, gerando créditos energéticos que podem ser utilizados em até 60 meses.<br/><br/><br/><br/></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section><!-- fim de cerca de seção -->
+
+
+	<!-- seção de serviço começa aqui -->
+	<section class="service text-center" id="service">
+		<div class="container">
+			<div class="row">
+				<h2>Serviços</h2>
+				<h4>Possuímos uma equipa especilizada de profissionais qualificados com um elevado conhecimento na área das Energias Renováveis.</h4>
+				<div class="col-md-3 col-sm-6">
+					<div class="single-service">
+						<div class="single-service-img">
+							<div class="service-img">
+								<img class="heart img-responsive" src="{% static 'img/img06.jpg' %}" alt="">
+							</div>
+						</div>
+						<h3>- Residencial<br><br/>Com as variedades tecnológicas, maior disponibilidade de mercado e financiamentos especializados, favorecem cada vez mais para atender qualquer demanda de consumo energético.
+ 
+Conforme cada perfil de Consumo de Energia e Demanda Energética, implantamos o Sistema de Geração de Energia Solar adequado, dentro das melhores tecnologias de Sistema Fotovoltaico Conectado à Rede (SFCR / on-Grid), Sistema Fotovoltaico Autônomo (SFA / off-Grid) e Sistema Fotovoltaico Híbrido (SFH / on-Grid ou off-Grid).</h3>
+					</div>
+				</div>
+
+				<div class="col-md-3 col-sm-6">
+					<div class="single-service">
+						<div class="single-service-img">
+							<div class="service-img">
+								<img class="brain img-responsive" src="{% static 'img/EBEC-1-1024x803.jpg' %}" alt="">
+							</div>
+						</div>
+						<h3>- Comercial<br><br/>Toda empresa visa em redução de custos, aumento do capital de giro e rendimentos de forma sustentável e eficiente. Aumente se capital de giro com a economia na conta de luz, fique blindado da inflação e torne sua empresa EFICIENTE e SUSTENTÁVEL.</h3>
+						
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-6">
+					<div class="single-service">
+						<div class="single-service-img">
+							<div class="service-img">
+								<img class="knee img-responsive" src="{% static 'img/download (4).jpg' %}" alt="">
+							</div>
+						</div>
+						<h3>- Industrial <br><br/>"Você não fica dependente de apenas uma única fonte de energia e submisso aos altos ajustes tarifários."
+"Ampliações de plantas com planejamento e otimização energética."
+ 
+Planejamento Orçamentário
+"O custo da conta de luz deixa de ser algo que você não tem controle e se transforma em custo fixo planejado."</h3>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-6">
+					<div class="single-service">
+						<div class="single-service-img">
+							<div class="service-img">
+								<img class="bone img-responsive" src="{% static 'img/agro.jpg' %}" alt="">
+							</div>
+						</div>
+						<h3>- Agronegócio<br><br/>A energia solar fotovoltaica já é uma realidade para aumento da lucratividade no agronegócio, pois através das placas fotovoltaicas você poderá gerar toda a energia que consome e garantir a redução total da energia consumida em sua fatura energética, atender a diversas demandas como bombeamento, irrigação, galpões, climatização, aviários, hidroponia, possilgas, ordenhadeiras, sistemas logísticos e outros.</h3>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section><!--FIM DA Seção de serviço -->
+
+
+	<!-- seção da equipe -->
+	<section class="team" id="team">
+		<div class="container">
+			<div class="row">
+				<div class="team-heading text-center">
+					<h2>Quem Somos</h2>
+					<h4>Prover soluções de geração de energia com fontes renováveis, criando valor econômico crescente e de longo prazo. A SUNNERGY é uma empresa Brasileira sedeada em Natal - RN, vocacionada para o Desenvolvimento, Gestão de Projeto, Construção, Operação e Manutenção (O&M) de Usinas Solares Fotovoltaicas.
+
+Temos como objectivo a implementação no Brasil do know how adquirido pela nossa equipa técnica ao longo de anos na Europa, melhorando assim a nossa qualidade de vida e das gerações futuras, cuidando ao mesmo tempo do nosso Ambiente.
+A SINNERGY desempenha atualmente um papel de liderança na indústria fotovoltaica no Brasil, suportado pela grande experiência e presença a nível internacional.
+A SINNERGY é especializada em soluções chave na mão para projetos EPC, quer para projetos de microgeração, minigeração e para as grandes usinas fotovoltaicas..</h4>
+				</div>
+					<div class="team-heading text-center">
+						<header>
+							<video controls=""  >
+									<source src="videos/video01.mp4" type="">
+							</video>
+						</header>
+					</div>
+				</div>
+		</div>
+	</section><!--  FIM DA seção da equipe -->
+
+	<!-- seção do mapa -->
+	<div class="api-map" id="contact">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-12 map" id="map"></div>
+			</div>
+		</div>
+	</div><!-- FIM DA seção do mapa -->
+
+	<!-- seção de contato começa aqui -->
+	<section class="contact">
+		<div class="container">
+			<div class="col">
+				<div class="contact-caption clearfix">
+					<div class="contact-heading text-center">
+						<h2>Solicite Orçamento</h2>
+					</div>
+
+					<div class="col-md-4 col-md-offset-1 contact-form">
+
+						<h3>Formulário de Orçamento</h3>
+						<div class="form">
+							<form class="form-inline row-md-3 ">
+								<input class="Seu Nome Completo" type="text" placeholder="Seu Nome completo:">
+								<input class="Seu E-mail" type="text" placeholder="Seu E-mail:">
+								<input class="Seu Telefone Celular" type="text" placeholder="Seu Telefone Celular:">
+								<input class="CNPJ ou CPF" type="text" placeholder="CNPJ ou CPF">
+							</form>
+								<div class="cow">
+								<select id=cbtensao class="col-md-6">
+    								<option>Tensão Contratada</option>
+    								<option>Monifásico</option>
+    								<option>Trifásico</option>
+    								<option>Bifásico</option>
+								</select>
+								<select id=cbtensao class="col-md-6">
+    								<option>Tensão</option>
+    								<option>110</option>
+    								<option>220</option>
+								</select>
+								</div>
+							<form class="form-inline row-md-4 ">
+								<input class="Consumo Médio em kwh" class="col-md-2" type="text" placeholder="Consumo Médio em kwh:">
+							</form>
+							<div class="cow">
+								<select id=cbtensao class="col-md-6">
+    								<option>Tipo de Instalação</option>
+    								<option>Colonial</option>
+    								<option>Ondulada</option>
+    								<option>fibracimento</option>
+    								<option>Laje</option>
+    								<option>Solo</option>
+								</select>
+							</div>	
+						</div>
+						<form class="form">
+							<textarea class="message" name="message" id="message" cols="30" rows="10" placeholder="Observação"></textarea>
+							<input class="submit-btn" type="submit" value="Enviar">
+						</form>
+					</div>
+					<div class="col-md-6 col-md-offset-1 contact-form">
+						<h3>Escreva-nos uma Mensagem</h3>
+						<form class="form">
+							<input class="name" type="text" placeholder="Nome">
+							<input class="email" type="email" placeholder="Email">
+							<input class="phone" type="text" placeholder="Telefone:">
+							<textarea class="Mensagem" name="Mensagem" id="Mensagem" cols="30" rows="10" placeholder="Mensagem:"></textarea>
+							<input class="submit-btn" type="submit" value="Enviar">
+						</form>
+						<div class="info-detail">
+							
+							<ul><li><i class="fa fa-map-marker"></i><span>Endereço:</span> 123 Some Street , London, UK, CP 123</li></ul>
+							<ul><li><i class="fa fa-phone"></i><span>Telefone:</span> (032) 987-1235</li></ul>
+							<ul><li><i class="fa fa-fax"></i><span>Fax:</span> (123) 984-1234</li></ul>
+							<ul><li><i class="fa fa-envelope"></i><span>Email:</span> info@doctor.com</li></ul>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</section><!-- FIM DA seção de contato  -->
+
+	<form action="" method="post" role="form" class="contactForm">
+		{% csrf_token %}
+		<div class="row">
+		<div class="col-md-6">
+			{%if is_valid %}
+				<script>
+				alert("Você enviou o formuário com sucesso!");
+				</script>
+			
+			{% endif %}
+			{% for field in form %}
+
+				{% if forloop.counter < 3 %}
+					<div class="form-group">
+				{% else %}
+					<div class="form-group">
+			{% endif %}
+
+
+				{{ field }}
+
+				<div class="validation"></div>
+
+				</div>
+			{% endfor %}
+		<button class="col-md-12" type="submit" style= "margin-top: 20px", border-radius: 4px " width= "100% (importan >Enviar Mensagem</button></div>
+	</form>
+
+
+
+	<!-- Rodapé começa aqui -->
+	<footer class="footer clearfix">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-6 footer-para">
+					<p>&copy;Mostafizur All right reserved</p>
+				</div>
+				<div class="col-xs-6 text-right">
+					<a href=""><i class="fa fa-facebook"></i></a>
+					<a href=""><i class="fa fa-twitter"></i></a>
+					<a href=""><i class="fa fa-skype"></i></a>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<!-- script tags
+	============================================================= -->
+	<script src="{% static 'js/jquery-2.1.1.js' %}"></script>
+	<script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+	<script src="{% static 'js/gmaps.js' %}"></script>
+	<script src="{% static 'js/smoothscroll.js' %}"></script>
+	<script src="{% static 'js/bootstrap.min.js' %}"></script>
+	<script src="{% static 'js/custom.js' %}"></script>
+</body>
+</html>
